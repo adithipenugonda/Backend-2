@@ -1,7 +1,7 @@
 import exp from 'express'
 import { userApp } from './APIs/UserAPI.js';
 import {connect} from 'mongoose'
-
+import cookieParser from 'cookie-parser';
 const app = exp()
 
 //connect to mongodb server
@@ -24,9 +24,11 @@ async function connectDB() {
 
 connectDB()
 app.use(exp.json());
+//add cookieparser middleware
+app.use(cookieParser());
 
 //if path starts with /user-api, forward the request to userApp
-//app.use("/user-api", userApp);
+app.use("/user-api", userApp);
 //if path starts with /product-api, forward the request to productApp
 import { productApp } from './APIs/ProductAPI.js';
 

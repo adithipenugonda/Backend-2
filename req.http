@@ -8,8 +8,8 @@ POST http://localhost:4000/user-api/users
 Content-Type: application/json
 
 {
-    "username": "mithra",
-    "password": "shanmukh",    
+    "username": "adithi",
+    "password": "chiyan",    
     "age": 19
 }
 
@@ -53,3 +53,18 @@ Content-Type: application/json
 }
 ### delete product
 DELETE http://localhost:4000/product-api/products/697dc0e7611bcdd80744875f
+
+
+### user authentication request 
+POST http://localhost:4000/user-api/auth
+Content-Type: application/json
+
+{
+    "username": "adithi",
+    "password": "chiyan"    
+}
+
+
+
+### request to test protected route
+GET http://localhost:4000/user-api/test
